@@ -1,7 +1,7 @@
 import Client from './Clients/AxiosClient';
 const movie = '/movie';
 const discover = '/discover/movie';
-const APIKey = ''; // <<Would usually store this in a .env file
+const APIKey = 'f9c3ae91ea7132ed424564f73bb859e0'; // <<Would usually store this in a .env file
 
 console.log(APIKey);
 
