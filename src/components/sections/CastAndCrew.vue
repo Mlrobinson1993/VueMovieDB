@@ -64,7 +64,7 @@ export default {
   display: flex;
   flex-direction: column;
   margin-bottom: 1.5rem;
-
+  overflow-y: scroll;
   & > h2 {
     text-align: left;
     color: white;
