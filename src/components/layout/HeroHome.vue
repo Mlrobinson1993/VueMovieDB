@@ -27,6 +27,7 @@
 import GoToMovie from "../buttons/GoToMovie";
 import StarRating from "../helpers/StarRating";
 export default {
+  name: "HeroHome",
   props: { movie: { type: Object } },
   components: { GoToMovie, StarRating },
   methods: {

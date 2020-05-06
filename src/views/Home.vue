@@ -1,13 +1,13 @@
 <template>
   <div class="home">
-    <Hero :movie="movies[0]" />
+    <HeroHome :movie="movies[0]" />
     <GenreNav v-on:filter-by-genre="searchByGenre" />
     <CardContainer :columns="4" :movies="movies" />
   </div>
 </template>
 
 <script>
-import Hero from "../components/layout/Hero";
+import HeroHome from "../components/layout/HeroHome";
 import CardContainer from "../components/layout/CardContainer";
 import GenreNav from "../components/layout/navigation/GenreNav";
 import Repository from "../repositories/RepositoryFactory.js";
@@ -15,7 +15,7 @@ const MovieRepository = Repository.get("movies");
 
 export default {
   name: "Home",
-  components: { CardContainer, Hero, GenreNav },
+  components: { CardContainer, HeroHome, GenreNav },
   data() {
     return {
       movies: []

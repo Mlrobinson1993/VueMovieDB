@@ -43,7 +43,10 @@
               <span class="metadata__item">{{ movie.original_language }}</span>
               <span class="metadata__divider">|</span>
               <div class="genres metadata__item">
-                <span v-for="genre in movie.genres" :key="genre.id">{{ genre.name }},</span>
+                <span
+                  v-for="genre in movie.genres"
+                  :key="genre.name + ':' + genre.id"
+                >{{ genre.name }},</span>
               </div>
             </div>
             <p>{{ movie.overview }}</p>
@@ -52,7 +55,7 @@
       </div>
       <CastAndCrew />
       <h2 class="section__title">Recommended Movies</h2>
-      <Recommended :movieID="movie.id" />
+      <RecommendedMovies :movieID="movie.id" />
     </div>
     <div v-else>
       <NotFound />
@@ -61,7 +64,7 @@
 </template>
 
 <script>
-import Recommended from "../components/sections/Recommended";
+import RecommendedMovies from "../components/sections/RecommendedMovies";
 import CastAndCrew from "../components/sections/CastAndCrew";
 import NotFound from "../views/NotFound";
 import Repository from "../repositories/RepositoryFactory.js";
@@ -72,7 +75,7 @@ export default {
   data() {
     return { movie: {}, isLoading: false };
   },
-  components: { Recommended, CastAndCrew, NotFound },
+  components: { RecommendedMovies, CastAndCrew, NotFound },
   created() {
     try {
       this.getMovie();
